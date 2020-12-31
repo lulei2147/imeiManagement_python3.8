@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>550</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>550</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>IMEI管理</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resrc.qrc">
+    <normaloff>:/logo/ico.ico</normaloff>:/logo/ico.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>IMEI</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QGroupBox" name="groupBox">
+              <property name="title">
+               <string>输入信息</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="0">
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <item>
+                  <widget class="QComboBox" name="cbox_info_type"/>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="cbox_dev_type">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget" native="true">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(181, 255, 181);</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout">
+                    <item row="0" column="0">
+                     <layout class="QHBoxLayout" name="horizontalLayout">
+                      <item>
+                       <widget class="QLineEdit" name="le_input">
+                        <property name="toolTip">
+                         <string/>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-color: rgb(255, 255, 255);</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="btn_add">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>40</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>40</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-color: rgb(255, 255, 255);</string>
+                        </property>
+                        <property name="text">
+                         <string>添加</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="cbox_input_mode">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>50</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>选择录入方式</string>
+                   </property>
+                   <property name="toolTipDuration">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_save">
+              <property name="minimumSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>保存</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="10,3">
+            <item>
+             <widget class="QTreeWidget" name="treeWidget">
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <column>
+               <property name="text">
+                <string>单号</string>
+               </property>
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="statusTip">
+                <string/>
+               </property>
+               <property name="textAlignment">
+                <set>AlignLeading|AlignVCenter</set>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>IMEI</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPlainTextEdit" name="pte_output">
+              <property name="frameShape">
+               <enum>QFrame::WinPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>其他</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>550</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resrc.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>le_input</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>le_input_finished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>90</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_save</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btn_save_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>488</x>
+     <y>96</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>339</x>
+     <y>50</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeWidget</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>item_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>222</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>361</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbox_info_type</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>cbox_info_type_currentIndexChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>78</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>179</x>
+     <y>25</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>le_input</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>le_input_text_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>471</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbox_input_mode</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>cbox_input_mode_currentIndexChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>494</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbox_info_type</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>cbox_input_mode_currentIndexChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>55</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>27</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbox_dev_type</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>cbox_input_mode_currentIndexChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>66</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbox_info_type</sender>
+   <signal>activated(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>le_input_getFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>36</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>120</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbox_dev_type</sender>
+   <signal>activated(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>le_input_getFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>70</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbox_input_mode</sender>
+   <signal>activated(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>le_input_getFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>499</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_add</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>le_input_finished()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>372</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>le_input_finished()</slot>
+  <slot>btn_save_clicked()</slot>
+  <slot>item_clicked()</slot>
+  <slot>cbox_info_type_currentIndexChanged()</slot>
+  <slot>le_input_text_changed()</slot>
+  <slot>cbox_input_mode_currentIndexChanged()</slot>
+  <slot>le_input_getFocus()</slot>
+ </slots>
+</ui>
